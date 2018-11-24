@@ -33,34 +33,40 @@ class UpdateUser extends Component {
     const { name, surname } = this.state;
     return (
       <form>
-        <div>
-          <label> Ubdate First Name</label>
+        <ul>
+          <div className="form-group">
+            <label>First Name</label>
+            <input
+              type="text"
+              className="form-control"
+              name="name"
+              value={name}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label>Last Name</label>
+            <input
+              type="text"
+              className="form-control"
+              name="surname"
+              value={surname}
+              onChange={this.handleChange}
+            />
+          </div>
           <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={this.handleChange}
+            type="button"
+            className="btn btn-primary"
+            value="Update User"
+            onClick={this.submitUpdatForm}
           />
-          <label>Ubdate Last Name</label>
           <input
-            type="text"
-            name="surname"
-            value={surname}
-            onChange={this.handleChange}
+            type="button"
+            className="btn btn-primary"
+            value="Cancel"
+            onClick={this.submitCancelForm}
           />
-        </div>
-        <input
-          type="button"
-          className="button button2"
-          value="Update User"
-          onClick={this.submitUpdatForm}
-        />
-        <input
-          type="button"
-          className="button button2"
-          value="Cancel"
-          onClick={this.submitCancelForm}
-        />
+        </ul>
       </form>
     );
   }

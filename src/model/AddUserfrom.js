@@ -33,28 +33,34 @@ class AddUser extends Component {
 
     return (
       <form>
-        <div>
-          <label>First Name</label>
+        <ul>
+          <div className="form-group">
+            <label>First Name</label>
+            <input
+              type="text"
+              className="form-control"
+              name="name"
+              value={name}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label>Last Name</label>
+            <input
+              type="text"
+              className="form-control"
+              name="surname"
+              value={surname}
+              onChange={this.handleChange}
+            />
+          </div>
           <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={this.handleChange}
+            type="button"
+            className="btn btn-primary"
+            value="Submit"
+            onClick={this.submitForm}
           />
-          <label>Last Name</label>
-          <input
-            type="text"
-            name="surname"
-            value={surname}
-            onChange={this.handleChange}
-          />
-        </div>
-        <input
-          type="button"
-          className="button button2"
-          value="Submit"
-          onClick={this.submitForm}
-        />
+        </ul>
       </form>
     );
   }
